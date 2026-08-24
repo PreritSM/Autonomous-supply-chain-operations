@@ -1,0 +1,23 @@
+# Postgres warehouse for the pipeline (Build Spec §4, §14.3).
+# Port is bound to the host so Power BI can reach it via its native Postgres
+# connector — not just internal to the Docker network.
+services:
+  warehouse:
+    image: postgres:16
+    container_name: supply_pipeline_warehouse
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-pipeline}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pipeline}
+      POSTGRES_DB: ${POSTGRES_DB:-supply_pipeline}
+    ports:
+      - "5432:5432"        # host:container — required for Power BI (§14.3)
+    volumes:
+      - warehouse_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-pipeline}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  warehouse_data:

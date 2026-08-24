@@ -1,0 +1,41 @@
+[project]
+name = "agentic-supply-pipeline"
+version = "0.1.0"
+description = "Agentic data pipeline (Autonomous Supply Chain) — detects/quarantines bad data, transforms via dbt, forecasts demand, and explains its decisions, validated against injected defects."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # Orchestration
+    "langgraph",
+    "langchain-anthropic",
+    "anthropic",
+    # MCP servers
+    "mcp",
+    # Warehouse + data
+    "psycopg[binary]",
+    "sqlalchemy",
+    "pandas",
+    "pydantic",
+    "python-dotenv",
+    # Transformation
+    "dbt-core",
+    "dbt-postgres",
+    # Forecasting
+    "lightgbm",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pytest",
+    "jupyter",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

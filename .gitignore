@@ -2,3 +2,33 @@ Dataset/
 Agentic_Data_Pipeline_Build_Spec.md
 Claude_Code_Handoff_Document.md
 CLAUDE.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.uv/
+
+# Environment / secrets
+.env
+
+# Data (injected + raw land here at runtime, not in git)
+data/raw/*
+data/landing/*
+!data/raw/.gitkeep
+!data/landing/.gitkeep
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# Models / artifacts
+*.pkl
+*.joblib
+forecasting/artifacts/
+
+# Notebooks
+.ipynb_checkpoints/
