@@ -3,6 +3,10 @@ Agentic_Data_Pipeline_Build_Spec.md
 Claude_Code_Handoff_Document.md
 CLAUDE.md
 
+# Personal working scratchpad: plans, decisions, and design discussions.
+# Reference material only — never published to GitHub.
+Claude_Plan/
+
 # Python
 __pycache__/
 *.py[cod]
