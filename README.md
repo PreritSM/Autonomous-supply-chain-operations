@@ -24,8 +24,8 @@ graph itself is the orchestrator — it owns shared state and routes control.
 | **Forecasting** | Reads `fct_daily_demand` (warehouse MCP), runs the LightGBM demand model, flags anomalies (z-score / IQR). |
 | **Validator / explainer** | Reconciles outputs, writes the audit report, can set `discrepancy_flag=True` to route control back to transformation. |
 
-Agents reach tools **only** through two custom MCP servers (`warehouse_mcp`,
-`landing_zone_mcp`).
+Agents reach tools **only** through three custom MCP servers (`warehouse_mcp`,
+`landing_zone_mcp`, `pipeline_mcp`).
 
 ## Run it yourself
 

@@ -7,8 +7,7 @@ requires-python = ">=3.11"
 dependencies = [
     # Orchestration
     "langgraph",
-    "langchain-anthropic",
-    "anthropic",
+    "langchain-nvidia-ai-endpoints",
     # MCP servers
     "mcp",
     # Warehouse + data
