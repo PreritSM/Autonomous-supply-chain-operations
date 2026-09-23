@@ -12,7 +12,7 @@ audit trail. A self-written **disruption injector** corrupts a controlled,
 catch rate is a real precision/recall number scored against ground truth — not a
 vibe. That is the single thing separating this from a generic forecasting demo.
 
-Built to read credibly to two audiences at once: a **Data Engineer II** panel
+Built to read credibly to two audiences at once: a **Data Engineer** panel
 (warehouse modeling, dbt, PySpark, lineage/audit) and an **Agentic-AI / MLOps**
 panel (LangGraph, MCP, multi-agent orchestration, a real feedback loop).
 
